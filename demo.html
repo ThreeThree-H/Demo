@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>a simple JavaScript Demo</title>
+	<style>
+	body{
+		margin: 0;
+		padding:0;
+		background: rgba(128, 128, 128, 0.24);
+	}
+		.wrap{
+			display: flex;
+			flex-direction: column;
+			width: 1000px;
+			margin-top: 10px;
+			font-family: "Helvetica","Arial",serif;
+			margin-left: 30px;
+		}
+		#items{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			list-style: none;
+		}
+		.item_list{
+			width: 7rem;
+			height: 2rem;
+			background: #a7da6b;
+			color:#fff;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 1rem;
+			cursor: pointer;
+		}
+		a{
+			color: #fff;
+			text-decoration: none;
+		}
+		img{
+			margin-top: 20px;
+			width: 450px;
+			height: 450px;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h1 id="t">One picture One story</h1>
+		<ul id="items">
+			<a href="pic1.jpg" onclick="showPic(this);return false"><li class="item_list" >one</li></a>
+			<a href="pic2.jpg" onclick="showPic(this);return false"><li class="item_list" >two</li></a>
+			<a href="pic3.jpg" onclick="showPic(this);return false"><li class="item_list" >three</li></a>
+			<a href="pic4.jpg" onclick="showPic(this);return false"><li class="item_list" >four</li></a>
+			<a href="pic5.jpg" onclick="showPic(this);return false"><li class="item_list" >five</li></a>
+		</ul>
+		<div class="pic">
+			<img src="pic1.jpg" alt="" id="placeholder">
+		</div>
+		<p id="footer">by ThreeThree</p>		
+	</div>
+</body>
+<script>
+function showPic(whichpic) {
+	var souce=whichpic.getAttribute("href");
+	var placeholder=document.getElementById("placeholder");
+	placeholder.setAttribute("src",souce);
+}
+</script>
+</html>
